@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+
+
+		<PackageReference Include="Volo.Abp.TenantManagement.Application" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Application" Version="$(AbpVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Cike.Scheduler.Application.Contracts\Cike.Scheduler.Application.Contracts.csproj" />
+	  <ProjectReference Include="..\Cike.Scheduler.Domain\Cike.Scheduler.Domain.csproj" />
+	</ItemGroup>
+</Project>
