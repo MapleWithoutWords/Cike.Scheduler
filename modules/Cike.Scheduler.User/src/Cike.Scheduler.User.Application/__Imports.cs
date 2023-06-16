@@ -1,0 +1,13 @@
+﻿global using System;
+global using Cike.Scheduler.User.Application.Contracts;
+global using Cike.Scheduler.User.Domain;
+global using Microsoft.Extensions.DependencyInjection;
+global using Volo.Abp.AutoMapper;
+global using Volo.Abp.Modularity;
+global using Volo.Abp.SettingManagement;
+global using Volo.Abp.TenantManagement;
+global using Cike.Scheduler.User.Application.Contracts.SchedulerUser;
+global using Cike.Scheduler.User.Application.Contracts.SchedulerUser.Dtos;
+global using Cike.Scheduler.User.Domain.Aggregates;
+global using Volo.Abp.Application.Services;
+global using Volo.Abp.Domain.Repositories;
