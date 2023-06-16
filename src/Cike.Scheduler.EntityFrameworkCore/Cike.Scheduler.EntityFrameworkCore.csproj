@@ -20,6 +20,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\modules\Cike.Scheduler.User\src\Cike.Scheduler.User.EntityFrameworkCore\Cike.Scheduler.User.EntityFrameworkCore.csproj" />
 	  <ProjectReference Include="..\Cike.Scheduler.Domain\Cike.Scheduler.Domain.csproj" />
 	</ItemGroup>
 </Project>

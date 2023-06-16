@@ -17,3 +17,10 @@ global using Microsoft.Extensions.Logging.Abstractions;
 global using Volo.Abp.Data;
 global using Volo.Abp.DependencyInjection;
 global using Volo.Abp.MultiTenancy;
+global using Volo.Abp.Domain.Entities;
+global using Volo.Abp.Domain.Entities.Auditing;
+global using Volo.Abp.Domain.Entities.Events;
+global using Cike.Scheduler.Domain.Shared.SchedulerJob;
+global using Cike.Scheduler.Domain.Shared.SchedulerTask;
+global using Cike.Scheduler.User.Domain;
+

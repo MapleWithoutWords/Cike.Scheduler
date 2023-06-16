@@ -20,3 +20,4 @@ global using Microsoft.Extensions.DependencyInjection;
 global using Volo.Abp.EntityFrameworkCore.MySQL;
 global using Cike.Scheduler.Domain.Data;
 global using Volo.Abp.Modularity;
+global using Cike.Scheduler.User.EntityFrameworkCore;

@@ -5,6 +5,7 @@
     typeof(AbpEntityFrameworkCoreMySQLModule),
     typeof(AbpTenantManagementEntityFrameworkCoreModule),
     typeof(AbpSettingManagementEntityFrameworkCoreModule),
+    typeof(CikeSchedulerUserEntityFrameworkCoreModule),
 })]
 public class CikeSchedulerEntityFrameworkCoreModule : AbpModule
 {

@@ -5,6 +5,7 @@
     typeof(AbpTenantManagementDomainModule),
     typeof(AbpSettingManagementDomainModule),
     typeof(CikeSchedulerDomainSharedModule),
+    typeof(CikeSchedulerUserDomainModule),
 })]
 public class CikeSchedulerDomainModule : AbpModule
 {

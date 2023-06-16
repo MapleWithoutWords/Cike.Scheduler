@@ -15,6 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\modules\Cike.Scheduler.User\src\Cike.Scheduler.User.Domain\Cike.Scheduler.User.Domain.csproj" />
 	  <ProjectReference Include="..\Cike.Scheduler.Domain.Shared\Cike.Scheduler.Domain.Shared.csproj" />
 	</ItemGroup>
 </Project>

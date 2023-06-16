@@ -13,4 +13,7 @@
 		<PackageReference Include="Volo.Abp.TenantManagement.Domain.Shared" Version="$(AbpVersion)" />
 		<PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="$(AbpVersion)" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\modules\Cike.Scheduler.User\src\Cike.Scheduler.User.Domain.Shared\Cike.Scheduler.User.Domain.Shared.csproj" />
+	</ItemGroup>
 </Project>
