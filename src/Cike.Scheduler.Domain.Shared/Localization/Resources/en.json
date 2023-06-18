@@ -1,0 +1,8 @@
+{
+  "culture": "en",
+  "texts": {
+    "UserNameExists": "The user name already exists",
+    "PhoneNumberExists": "The phonenumber already exists",
+    "EmailExists": "The email already exists"
+  }
+}

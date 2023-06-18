@@ -12,6 +12,7 @@ public class SchedulerUserProfile : Profile
             .Ignore(e => e.IsActive)
             .Ignore(e => e.EmailConfirmed)
             .Ignore(e => e.PhoneNumberConfirmed)
+            .Ignore(e => e.TenantId)
             .Ignore(e => e.Id)
             .IgnoreFullAuditedObjectProperties();
     }

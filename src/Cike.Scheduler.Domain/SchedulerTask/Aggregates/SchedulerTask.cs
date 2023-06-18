@@ -14,6 +14,7 @@ public class SchedulerTask : FullAuditedAggregateRoot<Guid>, IMultiTenant
     /// <summary>
     /// 任务执行的TraceId，方便对接SkyWalking之类的遥测系统
     /// </summary>
+    [MaxLength(64)]
     public string TraceId { get; private set; } = string.Empty;
 
     public TaskRunStatus TaskStatus { get; private set; }
@@ -26,8 +27,10 @@ public class SchedulerTask : FullAuditedAggregateRoot<Guid>, IMultiTenant
 
     public Guid JobId { get; private set; }
 
-    public string Origin { get; private set; }
+    [MaxLength(256)]
+    public string Origin { get; private set; } = string.Empty;
 
+    [MaxLength(256)]
     public string WorkerHost { get; private set; } = string.Empty;
 
     public string Message { get; private set; } = string.Empty;

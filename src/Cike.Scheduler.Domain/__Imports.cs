@@ -23,4 +23,4 @@ global using Volo.Abp.Domain.Entities.Events;
 global using Cike.Scheduler.Domain.Shared.SchedulerJob;
 global using Cike.Scheduler.Domain.Shared.SchedulerTask;
 global using Cike.Scheduler.User.Domain;
-
+global using System.ComponentModel.DataAnnotations;

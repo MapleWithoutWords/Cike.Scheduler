@@ -23,7 +23,7 @@ public class EntityFrameworkCoreCikeSchedulerDbSchemaMigrator
 
         await dbcontext.Database.MigrateAsync();
 
-        //Guid? tenantId = null;
+        Guid? tenantId = null;
 
         //if (!await dbcontext.Tenants.AnyAsync(e => e.Name != "Cike.Scheduler"))
         //{
@@ -34,17 +34,19 @@ public class EntityFrameworkCoreCikeSchedulerDbSchemaMigrator
         //    await dbcontext.Tenants.AddAsync(tenant);
         //}
 
-        //if (!dbcontext.Users.Any(e => e.Name == "admin" && e.TenantId == tenantId))
-        //{
-        //    await dbcontext.Users.AddAsync(new User.Domain.Aggregates.SchedulerUser(Guid.NewGuid())
-        //    {
-        //        UserName = "admin",
-        //        Email = "admin@qq.com",
-        //        Name = "超级管理员",
-        //        Surname = "张三",
-        //        PhoneNumber = "13133737905"
-        //    });
-        //}
+        if (!dbcontext.Users.Any(e => e.Name == "admin" && e.TenantId == tenantId))
+        {
+            await dbcontext.Users.AddAsync(new User.Domain.Aggregates.SchedulerUser(Guid.NewGuid())
+            {
+                UserName = "admin",
+                Email = "admin@qq.com",
+                Name = "超级管理员",
+                Surname = "张三",
+                PhoneNumber = "13133737905",
+                TenantId = tenantId,
+                Password = "123456".ToMd5()
+            });
+        }
 
         await dbcontext.SaveChangesAsync();
     }

@@ -2,24 +2,21 @@
 using Cike.Scheduler.Domain.SchedulerJob.Aggregates;
 using Cike.Scheduler.Domain.SchedulerJob.Entities;
 using Cike.Scheduler.Domain.SchedulerTask.Aggregates;
+using Cike.Scheduler.EntityFrameworkCore.Convertions;
 using Cike.Scheduler.User.Domain.Aggregates;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Users.EntityFrameworkCore;
 
 namespace Cike.Scheduler.EntityFrameworkCore;
 
 [ReplaceDbContext(typeof(ISettingManagementDbContext))]
-[ReplaceDbContext(typeof(ITenantManagementDbContext))]
 [ReplaceDbContext(typeof(ICikeSchedulerUserDbContext))]
 [ConnectionStringName("Default")]
-public class CikeSchedulerDbContext : AbpDbContext<CikeSchedulerDbContext>, ITenantManagementDbContext, ISettingManagementDbContext,ICikeSchedulerUserDbContext
+public class CikeSchedulerDbContext : AbpDbContext<CikeSchedulerDbContext>, ISettingManagementDbContext, ICikeSchedulerUserDbContext
 {
     public CikeSchedulerDbContext(DbContextOptions<CikeSchedulerDbContext> options) : base(options)
     {
     }
-
-    public virtual DbSet<Tenant> Tenants { get; set; }
-
-    public virtual DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
     public virtual DbSet<Setting> Settings { get; set; }
 
@@ -38,10 +35,12 @@ public class CikeSchedulerDbContext : AbpDbContext<CikeSchedulerDbContext>, ITen
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.ConfigureTenantManagement();
         modelBuilder.ConfigureSettingManagement();
-        
-        modelBuilder.Entity<SchedulerUser>()
-            .ConfigureAbpUser();
+
+        modelBuilder.Entity<SchedulerUser>().ConfigureAbpUser();
+
+        var entityBuilder = modelBuilder.Entity<SchedulerJobHttpConfig>();
+        entityBuilder.Property(e => e.HttpHeaders).HasConversion<JsonValueConverter<List<KeyValuePair<string, string>>>>();
+        entityBuilder.Property(e => e.HttpParameters).HasConversion<JsonValueConverter<List<KeyValuePair<string, string>>>>();
     }
 }

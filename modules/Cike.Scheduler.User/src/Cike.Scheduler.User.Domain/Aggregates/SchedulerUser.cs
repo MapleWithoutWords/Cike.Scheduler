@@ -26,10 +26,12 @@ public class SchedulerUser : FullAuditedAggregateRoot<Guid>, IUser
 
     public bool PhoneNumberConfirmed { get; set; } = false;
 
+    public string Password { get; set; } = string.Empty;
+
     public Guid? TenantId { get; set; }
 
     public object[] GetKeys()
     {
-        return new object[] { Id, UserName, Email, Name, Surname, PhoneNumber };
+        return new object[] { Id, UserName, Email, Name, Surname, PhoneNumber, Password };
     }
 }

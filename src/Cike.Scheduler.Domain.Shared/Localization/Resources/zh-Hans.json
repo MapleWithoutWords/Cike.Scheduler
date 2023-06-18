@@ -1,0 +1,8 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "UserNameExists": "用户名已存在",
+    "PhoneNumberExists": "电话号码已存在",
+    "EmailExists": "邮箱已存在"
+  }
+}

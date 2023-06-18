@@ -1,0 +1,9 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "UserNameOrPasswordError": "用户名或密码错误",
+    "UserNameExists": "用户名已存在",
+    "PhoneNumberExists": "电话号码已存在",
+    "EmailExists": "邮箱已存在"
+  }
+}

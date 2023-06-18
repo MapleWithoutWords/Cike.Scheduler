@@ -1,0 +1,9 @@
+{
+  "culture": "en",
+  "texts": {
+    "UserNameOrPasswordError": "UserName or Password error.",
+    "UserNameExists": "The user name already exists",
+    "PhoneNumberExists": "The phonenumber already exists",
+    "EmailExists": "The email already exists"
+  }
+}

@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="SchedulerJob\" />
-	  <Folder Include="SchedulerTask\" />
+	  <Folder Include="SchedulerJobs\MapperConfig\" />
+	  <Folder Include="SchedulerTask\MapperConfig\" />
 	</ItemGroup>
 </Project>

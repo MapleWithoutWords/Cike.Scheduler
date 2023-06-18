@@ -6,8 +6,11 @@ public class SchedulerJobHttpConfig :  Entity<Guid>, IMultiTenant
 {
     public Guid? TenantId { get; set; }
 
+    public Guid SchedulerJobId { get; set; }
+
     public HttpMethods HttpMethod { get; private set; }
 
+    [MaxLength(256)]
     public string RequestUrl { get; private set; } = string.Empty;
 
     public List<KeyValuePair<string, string>> HttpParameters { get; private set; } = new();

@@ -6,8 +6,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Localization\Resources\en.json" />
+	  <None Remove="Localization\Resources\zh-Hans.json" />
+	</ItemGroup>
 	<ItemGroup>
 
 		<PackageReference Include="Volo.Abp.Users.Domain.Shared" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Localization" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.Validation" Version="$(AbpVersion)" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Localization\Resources\en.json" />
+	  <EmbeddedResource Include="Localization\Resources\zh-Hans.json" />
 	</ItemGroup>
 </Project>

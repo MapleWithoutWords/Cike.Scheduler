@@ -1,4 +1,5 @@
 ﻿using Cike.Scheduler.Domain.Shared.SchedulerTask;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cike.Scheduler.Domain.SchedulerJob.Aggregates;
 
@@ -6,8 +7,10 @@ public class SchedulerJob : FullAuditedAggregateRoot<Guid>, IMultiTenant
 {
     public Guid? TenantId { get; set; }
 
+    [MaxLength(64)]
     public string Name { get; set; } = string.Empty;
 
+    [MaxLength(64)]
     public string Owner { get; set; } = string.Empty;
 
     public Guid OwnerId { get; set; }
@@ -17,6 +20,7 @@ public class SchedulerJob : FullAuditedAggregateRoot<Guid>, IMultiTenant
     /// </summary>
     public ScheduleTypes ScheduleType { get; set; }
 
+    [MaxLength(64)]
     public string CronExpression { get; set; } = string.Empty;
 
     /// <summary>
@@ -32,6 +36,7 @@ public class SchedulerJob : FullAuditedAggregateRoot<Guid>, IMultiTenant
     /// <summary>
     /// 执行任务的worker主机
     /// </summary>
+    [MaxLength(256)]
     public string SpecifiedWorkerHost { get; set; } = string.Empty;
 
     /// <summary>
@@ -69,11 +74,13 @@ public class SchedulerJob : FullAuditedAggregateRoot<Guid>, IMultiTenant
     /// </summary>
     public int FailedRetryCount { get; set; }
 
+    [MaxLength(512)]
     public string Description { get; set; } = string.Empty;
 
     /// <summary>
     /// 运行结果回调通知地址
     /// </summary>
+    [MaxLength(256)]
     public string NotifyUrl { get; set; } = string.Empty;
 
     /// <summary>

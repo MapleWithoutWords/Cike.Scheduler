@@ -5,3 +5,5 @@ global using Volo.Abp.ObjectExtending;
 global using Volo.Abp.SettingManagement;
 global using Volo.Abp.TenantManagement;
 global using Cike.Scheduler.User.Application.Contracts;
+global using Volo.Abp.Application.Dtos;
+global using System.ComponentModel.DataAnnotations;
