@@ -1,7 +1,7 @@
 <template>
   <a-table :dataSource="dataSource" :columns="columns" />
 </template>
-<script>
+<script lang="ts">
   import { Table } from 'ant-design-vue'
   export default {
     components: {
