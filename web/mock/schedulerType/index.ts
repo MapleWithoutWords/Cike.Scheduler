@@ -4,14 +4,17 @@ import { MockMethod } from 'vite-plugin-mock'
 // single
 function getSchedulerList() {
   return {
-    items: [],
+    items: [
+      { id: 1, name: 'api任务', description: 'api task desc' },
+      { id: 2, name: '应用程序任务', description: 'application task desc' },
+    ],
     total: 20,
   }
 }
 
 export default [
   {
-    url: '/api/app/schdulerType',
+    url: '/basic-api/api/app/schedulerType',
     timeout: 1000,
     method: 'get',
     response: (request: requestParams) => {

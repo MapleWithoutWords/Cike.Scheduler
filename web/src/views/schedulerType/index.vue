@@ -1,47 +1,30 @@
 <template>
-  <a-table :dataSource="dataSource" :columns="columns" />
+  <Table :dataSource="dataSource" :columns="columns" />
 </template>
-<script lang="ts">
+<script lang="ts" setup>
+  import { reactive } from 'vue'
   import { Table } from 'ant-design-vue'
-  export default {
-    components: {
-      ATable: Table,
-    },
-    setup() {
-      return {
-        dataSource: [
-          {
-            key: '1',
-            name: '胡彦斌',
-            age: 32,
-            address: '西湖区湖底公园1号',
-          },
-          {
-            key: '2',
-            name: '胡彦祖',
-            age: 42,
-            address: '西湖区湖底公园1号',
-          },
-        ],
+  import { getSchedulerList } from '/@/api/schedulerType/index'
+  import { schedulerTypeModel } from '/@/api/schedulerType/model/schedulerTypeModel'
 
-        columns: [
-          {
-            title: '姓名',
-            dataIndex: 'name',
-            key: 'name',
-          },
-          {
-            title: '年龄',
-            dataIndex: 'age',
-            key: 'age',
-          },
-          {
-            title: '住址',
-            dataIndex: 'address',
-            key: 'address',
-          },
-        ],
-      }
+  let schedulerTypeResponse = await getSchedulerList()
+
+  let dataSource = reactive(schedulerTypeResponse.items as schedulerTypeModel[])
+  let columns = reactive([
+    {
+      title: 'id',
+      dataIndex: 'id',
+      key: 'id',
     },
-  }
+    {
+      title: '名称',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '描述',
+      dataIndex: 'description',
+      key: 'description',
+    },
+  ])
 </script>
