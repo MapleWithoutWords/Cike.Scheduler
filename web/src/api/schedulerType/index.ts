@@ -10,6 +10,6 @@ enum Api {
  * @description: Get user menu based on id
  */
 
-export const getSchedulerList = () => {
-  return defHttp.get<BasicFetchResult<schedulerTypeModel>>({ url: Api.GetList })
+export function getSchedulerList() {
+  return defHttp.request<BasicFetchResult<schedulerTypeModel>>({ url: Api.GetList, method: 'GET' })
 }
