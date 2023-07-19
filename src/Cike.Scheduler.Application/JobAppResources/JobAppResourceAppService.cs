@@ -1,4 +1,6 @@
-﻿namespace Cike.Scheduler.Application.JobAppResources;
+﻿using Volo.Abp.Content;
+
+namespace Cike.Scheduler.Application.JobAppResources;
 
 public class JobAppResourceAppService : CrudAppService<JobAppResource, JobAppResourceGetListOutput, Guid, JobAppResourceGetListInput, JobAppResourceCreateUpdateInput>, IJobAppResourceAppService
 {
@@ -32,6 +34,22 @@ public class JobAppResourceAppService : CrudAppService<JobAppResource, JobAppRes
         if (resource != null)
         {
             throw new UserFriendlyException($"已存在相同版本的【{name}】");
+        }
+    }
+
+    /// <summary>
+    /// 上传文件
+    /// </summary>
+    /// <param name="remoteStreamContents"></param>
+    /// <returns></returns>
+    public async Task UploadAsync(List<IRemoteStreamContent> remoteStreamContents)
+    {
+        foreach (var item in remoteStreamContents)
+        {
+            using var fileStream = item.GetStream();
+
+            
+
         }
     }
 }

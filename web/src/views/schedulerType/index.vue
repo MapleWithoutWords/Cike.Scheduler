@@ -7,7 +7,7 @@
   import { getSchedulerList } from '/@/api/schedulerType/index'
   import { schedulerTypeModel } from '/@/api/schedulerType/model/schedulerTypeModel'
 
-  let schedulerTypeResponse = getSchedulerList()
+  let schedulerTypeResponse = await getSchedulerList()
 
   let dataSource = reactive(schedulerTypeResponse.items as schedulerTypeModel[])
   let columns = reactive([

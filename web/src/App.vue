@@ -1,7 +1,9 @@
 <template>
   <ConfigProvider :locale="getAntdLocale">
     <AppProvider>
-      <RouterView />
+      <suspense>
+        <RouterView />
+      </suspense>
     </AppProvider>
   </ConfigProvider>
 </template>
