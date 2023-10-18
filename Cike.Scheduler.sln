@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.Scheduler.TestBase", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.Scheduler.TestApplication", "tests\Cike.Scheduler.TestApplication\Cike.Scheduler.TestApplication.csproj", "{88866D46-E180-4231-9D3A-FF56CFEAC05E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cike.Scheduler.Worker", "src\Cike.Scheduler.Worker\Cike.Scheduler.Worker.csproj", "{996ACADD-47B4-49A2-B7F5-C1F33F4201F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.Scheduler.Worker", "src\Cike.Scheduler.Worker\Cike.Scheduler.Worker.csproj", "{996ACADD-47B4-49A2-B7F5-C1F33F4201F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modules", "modules", "{FACEB10D-DE2D-4543-A3CC-267B7D17665C}"
 EndProject
@@ -49,6 +49,26 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.Scheduler.User.Application.Contracts", "modules\Cike.Scheduler.User\src\Cike.Scheduler.User.Application.Contracts\Cike.Scheduler.User.Application.Contracts.csproj", "{7E79D7A8-1706-47AD-AE40-ECB4F23E728C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.Scheduler.User.Application", "modules\Cike.Scheduler.User\src\Cike.Scheduler.User.Application\Cike.Scheduler.User.Application.csproj", "{6B70A6C6-98FA-47A1-85E1-3A8FD25D03A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cike.TenantManagement", "Cike.TenantManagement", "{14FBA519-EDCA-4BCC-847C-8289CB322AF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E9A12479-D7BF-494D-94BF-49C222A65B94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.Domain.Shared", "modules\Cike.TenantManagement\src\Cike.TenantManagement.Domain.Shared\Cike.TenantManagement.Domain.Shared.csproj", "{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.Domain", "modules\Cike.TenantManagement\src\Cike.TenantManagement.Domain\Cike.TenantManagement.Domain.csproj", "{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.Application.Contracts", "modules\Cike.TenantManagement\src\Cike.TenantManagement.Application.Contracts\Cike.TenantManagement.Application.Contracts.csproj", "{0BBE75F4-DD2D-4561-939E-43F0F8919E0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.Application", "modules\Cike.TenantManagement\src\Cike.TenantManagement.Application\Cike.TenantManagement.Application.csproj", "{F0556C9C-6457-4E6B-BDD8-A3774ABD229A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.HttpApi.Client", "modules\Cike.TenantManagement\src\Cike.TenantManagement.HttpApi.Client\Cike.TenantManagement.HttpApi.Client.csproj", "{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cike.TenantManagement.Web", "modules\Cike.TenantManagement\src\Cike.TenantManagement.Web\Cike.TenantManagement.Web.csproj", "{C533D915-FFF2-470E-8BFE-456D9876D485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cike.TenantManagement.EntityFrameworkCore", "modules\Cike.TenantManagement\src\Cike.TenantManagement.EntityFrameworkCore\Cike.TenantManagement.EntityFrameworkCore.csproj", "{A17CBB79-17C7-45A0-82DB-E634AFE9679F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,6 +136,34 @@ Global
 		{6B70A6C6-98FA-47A1-85E1-3A8FD25D03A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B70A6C6-98FA-47A1-85E1-3A8FD25D03A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B70A6C6-98FA-47A1-85E1-3A8FD25D03A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBE75F4-DD2D-4561-939E-43F0F8919E0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBE75F4-DD2D-4561-939E-43F0F8919E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBE75F4-DD2D-4561-939E-43F0F8919E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBE75F4-DD2D-4561-939E-43F0F8919E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0556C9C-6457-4E6B-BDD8-A3774ABD229A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0556C9C-6457-4E6B-BDD8-A3774ABD229A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0556C9C-6457-4E6B-BDD8-A3774ABD229A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0556C9C-6457-4E6B-BDD8-A3774ABD229A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C533D915-FFF2-470E-8BFE-456D9876D485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C533D915-FFF2-470E-8BFE-456D9876D485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C533D915-FFF2-470E-8BFE-456D9876D485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C533D915-FFF2-470E-8BFE-456D9876D485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17CBB79-17C7-45A0-82DB-E634AFE9679F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17CBB79-17C7-45A0-82DB-E634AFE9679F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17CBB79-17C7-45A0-82DB-E634AFE9679F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17CBB79-17C7-45A0-82DB-E634AFE9679F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +187,16 @@ Global
 		{E31C43A3-D7AA-49C1-909F-A771EBCD35EC} = {97113B64-95BE-4017-B567-B62306E7750B}
 		{7E79D7A8-1706-47AD-AE40-ECB4F23E728C} = {97113B64-95BE-4017-B567-B62306E7750B}
 		{6B70A6C6-98FA-47A1-85E1-3A8FD25D03A0} = {97113B64-95BE-4017-B567-B62306E7750B}
+		{14FBA519-EDCA-4BCC-847C-8289CB322AF2} = {FACEB10D-DE2D-4543-A3CC-267B7D17665C}
+		{B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4} = {14FBA519-EDCA-4BCC-847C-8289CB322AF2}
+		{E9A12479-D7BF-494D-94BF-49C222A65B94} = {14FBA519-EDCA-4BCC-847C-8289CB322AF2}
+		{4E18C9AE-0CA2-466F-817B-602C9AB3EDC9} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{7A302B4F-21A0-4ADB-8E65-DA9BD80B2F04} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{0BBE75F4-DD2D-4561-939E-43F0F8919E0B} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{F0556C9C-6457-4E6B-BDD8-A3774ABD229A} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{66FD6AD3-1B52-4AE9-8F12-95E6E2BF8DD7} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{C533D915-FFF2-470E-8BFE-456D9876D485} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
+		{A17CBB79-17C7-45A0-82DB-E634AFE9679F} = {B3AA5544-A4CC-40C2-B5E6-68A0C9A20EC4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B8CA49A-7037-4F79-AAE2-233C0674E38A}

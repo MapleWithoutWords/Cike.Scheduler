@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../../../common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Cike.TenantManagement.Domain\Cike.TenantManagement.Domain.csproj" />
+		<ProjectReference Include="..\Cike.TenantManagement.Application.Contracts\Cike.TenantManagement.Application.Contracts.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="$(AbpVersion)" />
+	</ItemGroup>
+</Project>
