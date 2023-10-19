@@ -8,7 +8,7 @@ namespace Cike.TenantManagement.EntityFrameworkCore
 {
     [DependsOn(typeof(AbpEntityFrameworkCoreModule))]
     [DependsOn(typeof(CikeTenantManagementDomainModule))]
-    public class CikeTenantManagementEntityFraemworkCoreModule:AbpModule
+    public class CikeTenantManagementEntityFraemworkCoreModule : AbpModule
     {
 
         public override void ConfigureServices(ServiceConfigurationContext context)
@@ -16,6 +16,11 @@ namespace Cike.TenantManagement.EntityFrameworkCore
             context.Services.AddAbpDbContext<TenantManagementDbContext>(options =>
             {
                 options.AddDefaultRepositories<ITenantManagementDbContext>();
+            });
+
+            context.Services.Configure<AbpDbContextOptions>(options =>
+            {
+                options.UseMySQL();
             });
         }
     }

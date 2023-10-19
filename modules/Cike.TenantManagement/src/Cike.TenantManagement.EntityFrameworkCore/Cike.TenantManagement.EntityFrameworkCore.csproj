@@ -1,5 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="../../../../common.props" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../common.props" />
 
   <PropertyGroup>
     <TargetFramework>$(TargetFramework)</TargetFramework>
@@ -10,7 +10,16 @@
 	<ItemGroup>
 		<ProjectReference Include="..\Cike.TenantManagement.Domain\Cike.TenantManagement.Domain.csproj" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="$(AbpVersion)" />
+		<PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" Version="$(AbpVersion)" />
 	</ItemGroup>
 </Project>

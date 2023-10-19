@@ -1,17 +1,32 @@
-﻿namespace Cike.Scheduler.Domain.Data;
+﻿using Cike.TenantManagement.Domain.TenantManagement.Entities;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Data;
+using Volo.Abp.DependencyInjection;
+using Volo.Abp.MultiTenancy;
 
-public class CikeSchedulerDbMigrationService : ITransientDependency
+namespace Cike.TenantManagement.Domain.TenantManagement.Data;
+
+public class CikeTenantManagementDbMigrationService : ITransientDependency
 {
-    public ILogger<CikeSchedulerDbMigrationService> Logger { get; set; }
+    public ILogger<CikeTenantManagementDbMigrationService> Logger { get; set; }
 
     private readonly IDataSeeder _dataSeeder;
-    private readonly IEnumerable<ICikeSchedulerDbSchemaMigrator> _dbSchemaMigrators;
+    private readonly IEnumerable<ICikeTenantManagementDbMigrator> _dbSchemaMigrators;
     private readonly ITenantRepository _tenantRepository;
     private readonly ICurrentTenant _currentTenant;
 
-    public CikeSchedulerDbMigrationService(
+    public CikeTenantManagementDbMigrationService(
         IDataSeeder dataSeeder,
-        IEnumerable<ICikeSchedulerDbSchemaMigrator> dbSchemaMigrators,
+        IEnumerable<ICikeTenantManagementDbMigrator> dbSchemaMigrators,
         ITenantRepository tenantRepository,
         ICurrentTenant currentTenant)
     {
@@ -20,7 +35,7 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
         _tenantRepository = tenantRepository;
         _currentTenant = currentTenant;
 
-        Logger = NullLogger<CikeSchedulerDbMigrationService>.Instance;
+        Logger = NullLogger<CikeTenantManagementDbMigrationService>.Instance;
     }
 
     public async Task MigrateAsync()
@@ -39,38 +54,11 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
 
         Logger.LogInformation($"Successfully completed host database migrations.");
 
-        //var tenants = await _tenantRepository.GetListAsync(includeDetails: true);
-
-        //var migratedDatabaseSchemas = new HashSet<string>();
-        //foreach (var tenant in tenants)
-        //{
-        //    using (_currentTenant.Change(tenant.Id))
-        //    {
-        //        if (tenant.ConnectionStrings.Any())
-        //        {
-        //            var tenantConnectionStrings = tenant.ConnectionStrings
-        //                .Select(x => x.Value)
-        //                .ToList();
-
-        //            if (!migratedDatabaseSchemas.IsSupersetOf(tenantConnectionStrings))
-        //            {
-        //                await MigrateDatabaseSchemaAsync(tenant);
-
-        //                migratedDatabaseSchemas.AddIfNotContains(tenantConnectionStrings);
-        //            }
-        //        }
-
-        //        await SeedDataAsync(tenant);
-        //    }
-
-        //    Logger.LogInformation($"Successfully completed {tenant.Name} tenant database migrations.");
-        //}
-
-        //Logger.LogInformation("Successfully completed all database migrations.");
-        //Logger.LogInformation("You can safely end this process...");
+        Logger.LogInformation("Successfully completed all database migrations.");
+        Logger.LogInformation("You can safely end this process...");
     }
 
-    private async Task MigrateDatabaseSchemaAsync(Tenant tenant = null)
+    private async Task MigrateDatabaseSchemaAsync(Tenant? tenant = null)
     {
         Logger.LogInformation(
             $"Migrating schema for {(tenant == null ? "host" : tenant.Name + " tenant")} database...");
@@ -81,14 +69,9 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
         }
     }
 
-    private async Task SeedDataAsync(Tenant tenant = null)
+    private async Task SeedDataAsync(Tenant? tenant = null)
     {
-        Logger.LogInformation($"Executing {(tenant == null ? "host" : tenant.Name + " tenant")} database seed...");
-
-        //await _dataSeeder.SeedAsync(new DataSeedContext(tenant?.Id)
-        //    .WithProperty(IdentityDataSeedContributor.AdminEmailPropertyName, IdentityDataSeedContributor.AdminEmailDefaultValue)
-        //    .WithProperty(IdentityDataSeedContributor.AdminPasswordPropertyName, IdentityDataSeedContributor.AdminPasswordDefaultValue)
-        //);
+        
     }
 
     private bool AddInitialMigrationIfNotExist()
@@ -134,8 +117,7 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
     private bool MigrationsFolderExists()
     {
         var dbMigrationsProjectFolder = GetEntityFrameworkCoreProjectFolderPath();
-
-        return Directory.Exists(Path.Combine(dbMigrationsProjectFolder, "Migrations"));
+        return dbMigrationsProjectFolder != null && Directory.Exists(Path.Combine(dbMigrationsProjectFolder, "Migrations"));
     }
 
     private void AddInitialMigration()
@@ -170,7 +152,7 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
         }
     }
 
-    private string GetEntityFrameworkCoreProjectFolderPath()
+    private string? GetEntityFrameworkCoreProjectFolderPath()
     {
         var slnDirectoryPath = GetSolutionDirectoryPath();
 
@@ -185,15 +167,15 @@ public class CikeSchedulerDbMigrationService : ITransientDependency
             .FirstOrDefault(d => d.EndsWith(".EntityFrameworkCore"));
     }
 
-    private string GetSolutionDirectoryPath()
+    private string? GetSolutionDirectoryPath()
     {
         var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
 
-        while (Directory.GetParent(currentDirectory.FullName) != null)
+        while (currentDirectory != null && Directory.GetParent(currentDirectory.FullName) != null)
         {
             currentDirectory = Directory.GetParent(currentDirectory.FullName);
 
-            if (Directory.GetFiles(currentDirectory.FullName).FirstOrDefault(f => f.EndsWith(".sln")) != null)
+            if (currentDirectory != null && Directory.GetFiles(currentDirectory.FullName).FirstOrDefault(f => f.EndsWith(".sln")) != null)
             {
                 return currentDirectory.FullName;
             }

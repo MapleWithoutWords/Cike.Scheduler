@@ -37,7 +37,7 @@ public class DbMigratorHostedService : IHostedService
 
             await application
                 .ServiceProvider
-                .GetRequiredService<ICikeTenantManagementDbMigrator>()
+                .GetRequiredService<CikeTenantManagementDbMigrationService>()
                 .MigrateAsync();
 
             await application.ShutdownAsync();
