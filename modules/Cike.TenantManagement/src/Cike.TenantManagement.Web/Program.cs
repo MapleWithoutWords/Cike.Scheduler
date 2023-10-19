@@ -1,6 +1,12 @@
+using Cike.TenantManagement.Web;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseAutofac();
+
+await builder.AddApplicationAsync<CikeTenantManagementWebModule>();
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+await app.InitializeApplicationAsync();
 
-app.Run();
+await app.RunAsync();

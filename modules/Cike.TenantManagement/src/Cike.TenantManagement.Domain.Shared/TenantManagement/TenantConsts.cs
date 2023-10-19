@@ -4,11 +4,11 @@ namespace Cike.TenantManagement.Domain.Shared;
 
 public static class TenantConsts
 {
-    public static string DbTablePrefix { get; set; } = AbpCommonDbProperties.DbTablePrefix;
+    public static string DbTablePrefix { get; set; } = "Cike";
 
     public static string DbSchema { get; set; } = AbpCommonDbProperties.DbSchema;
 
-    public const string ConnectionStringName = "AbpTenantManagement";
+    public const string ConnectionStringName = "CikeTenantManagement";
 
 
     /// <summary>

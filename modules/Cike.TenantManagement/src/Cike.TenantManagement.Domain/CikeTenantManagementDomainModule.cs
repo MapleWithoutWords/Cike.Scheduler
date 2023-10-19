@@ -8,6 +8,7 @@ using Volo.Abp.Caching;
 using Volo.Abp.Data;
 using Volo.Abp.Domain;
 using Volo.Abp.Domain.Entities.Events.Distributed;
+using Volo.Abp.Emailing;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.ObjectExtending.Modularity;
@@ -20,6 +21,7 @@ namespace Cike.TenantManagement.Domain;
 [DependsOn(typeof(AbpDddDomainModule))]
 [DependsOn(typeof(AbpAutoMapperModule))]
 [DependsOn(typeof(AbpCachingModule))]
+[DependsOn(typeof(AbpEmailingModule))]
 [DependsOn(typeof(CikeTenantManagementDomainSharedModule))]
 public class CikeTenantManagementDomainModule : AbpModule
 {
