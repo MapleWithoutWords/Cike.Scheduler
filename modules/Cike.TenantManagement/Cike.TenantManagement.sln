@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution 
 		common.props = common.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cike.TenantManagement.TestBase", "tests\Cike.TenantManagement.TestBase\Cike.TenantManagement.TestBase.csproj", "{041F7FF1-A843-48AF-87EF-C30509B373DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{451C368A-40B7-4633-BEB6-0F157E6FA838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451C368A-40B7-4633-BEB6-0F157E6FA838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451C368A-40B7-4633-BEB6-0F157E6FA838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041F7FF1-A843-48AF-87EF-C30509B373DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041F7FF1-A843-48AF-87EF-C30509B373DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041F7FF1-A843-48AF-87EF-C30509B373DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041F7FF1-A843-48AF-87EF-C30509B373DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,5 +85,9 @@ Global
 		{A619C860-553A-4F36-A00C-78AE257B2D7C} = {B856CBC0-EC76-4097-92A3-437F27DD88F6}
 		{EB391DEA-F7DE-4495-A291-6CF498E2C225} = {B856CBC0-EC76-4097-92A3-437F27DD88F6}
 		{451C368A-40B7-4633-BEB6-0F157E6FA838} = {B856CBC0-EC76-4097-92A3-437F27DD88F6}
+		{041F7FF1-A843-48AF-87EF-C30509B373DA} = {115F087E-0430-4E44-A064-59F90174642F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EE1B4AE-B7E0-4604-BB91-0B0B5AC3C19F}
 	EndGlobalSection
 EndGlobal
