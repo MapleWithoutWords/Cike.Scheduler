@@ -4,6 +4,7 @@
   <PropertyGroup>
     <TargetFramework>$(StandardTargetFramework)</TargetFramework>
     <Nullable>enable</Nullable>
+	  <Version>$(Version)</Version>
   </PropertyGroup>
 
   <ItemGroup>

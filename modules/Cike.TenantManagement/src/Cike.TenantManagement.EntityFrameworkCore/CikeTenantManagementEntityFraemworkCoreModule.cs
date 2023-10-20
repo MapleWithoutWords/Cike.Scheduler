@@ -18,10 +18,12 @@ namespace Cike.TenantManagement.EntityFrameworkCore
                 options.AddDefaultRepositories<ITenantManagementDbContext>();
             });
 
+#if DEBUG
             context.Services.Configure<AbpDbContextOptions>(options =>
             {
                 options.UseMySQL();
             });
+#endif
         }
     }
 }

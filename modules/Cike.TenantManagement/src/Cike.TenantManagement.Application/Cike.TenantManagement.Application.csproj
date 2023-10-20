@@ -5,6 +5,7 @@
     <TargetFramework>$(TargetFramework)</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	  <Version>$(Version)</Version>
   </PropertyGroup>
 
 	<ItemGroup>

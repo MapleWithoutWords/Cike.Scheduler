@@ -2,13 +2,13 @@
 	<Import Project="../../common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+	  <TargetFramework>$(TargetFramework)</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="4.4.2" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Web" Version="$(AbpVersion)" />
 	  <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="$(AbpVersion)" />
 	  <PackageReference Include="Volo.Abp.Autofac" Version="$(AbpVersion)" />
 	  <PackageReference Include="Volo.Abp.Swashbuckle" Version="$(AbpVersion)" />

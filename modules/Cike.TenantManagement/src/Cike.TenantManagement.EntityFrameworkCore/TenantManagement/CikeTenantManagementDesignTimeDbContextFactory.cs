@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Cike.TenantManagement.EntityFrameworkCore.TenantManagement
 {
-    public class CikeTenantManagementDbContextFactory : IDesignTimeDbContextFactory<TenantManagementDbContext>
+    public class CikeTenantManagementDesignTimeDbContextFactory : IDesignTimeDbContextFactory<TenantManagementDbContext>
     {
         public TenantManagementDbContext CreateDbContext(string[] args)
         {

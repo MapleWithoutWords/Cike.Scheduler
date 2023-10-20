@@ -7,7 +7,7 @@
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 	<AbpProjectType>app</AbpProjectType>
 	<AbpVersion>7.3.0</AbpVersion>
-	<MicrosoftPackageVersion>7.0.2</MicrosoftPackageVersion>
+	<MicrosoftPackageVersion>7.0.1</MicrosoftPackageVersion>
   </PropertyGroup>
 
 
